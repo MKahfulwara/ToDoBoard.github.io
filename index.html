@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="board.css" />
+    <link rel="stylesheet" href="select.css" />
+    <link rel="stylesheet" href="inputs.css" />
+  </head>
+  <body>
+    <div class="board">
+      <div id="task-card" class="hide center">
+        <div class="card">
+          <div class="flex space">
+            <p id="list-position"></p>
+            <p id="id" name=""></p>
+            <button id="close-btn" onclick="PopUp(event ,'close')">X</button>
+          </div>
+
+          <form action=""></form>
+          <div class="flex space margin">
+            <label for="card-title">Task Title:</label>
+            <input id="card-title" type="text" />
+          </div>
+          <div class="flex space margin">
+            <label for="card-desc">Description:</label>
+            <textarea
+              name="Description"
+              id="card-desc"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <!-- <input id= type="text" /> -->
+          </div>
+          <div class="flex space margin">
+            <label for="priority-select">Priority:</label>
+
+            <div class="select">
+              <select name="priority" id="priority-select">
+                <option selected disabled>Choose Priority</option>
+                <option value="2">Low</option>
+                <option value="1">Medium</option>
+                <option value="0" selected>High</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex space margin">
+            <label for="end-date">End Date:</label>
+            <input type="date" name="" id="end-date" />
+          </div>
+
+          <button id="save-data" class="btn" onclick="saveData(event)">
+            save
+          </button>
+        </div>
+      </div>
+      <form id="todo-form">
+        <input type="text" placeholder="New TODO..." id="todo-input" />
+        <button type="submit" class="btn">Add +</button>
+      </form>
+      <div class="lanes">
+        <div>
+          <div class="flex space fixed">
+            <h3 class="heading">ToDo</h3>
+            <button id="sort" onclick="sortTodo('todo')">&#8645;</button>
+          </div>
+          <div class="swim-lane" id="todo-lane"></div>
+        </div>
+        <div>
+          <div class="flex space fixed">
+            <h3 class="heading">Doing</h3>
+            <button id="sort" onclick="sortTodo('doing')">&#8645;</button>
+          </div>
+          <div class="swim-lane" id="doing-lane"></div>
+        </div>
+        <div>
+          <div class="flex space fixed"><h3 class="heading">Done</h3></div>
+          <div class="swim-lane" id="done-lane"></div>
+        </div>
+      </div>
+    </div>
+
+    <script></script>
+    <script src="drag.js" defer></script>
+    <script src="todo.js" defer></script>
+  </body>
+</html>
